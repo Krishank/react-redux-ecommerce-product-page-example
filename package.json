@@ -1,0 +1,38 @@
+{
+  "name": "react-redux-ecommerce-product-page-example",
+  "version": "1.0.0",
+  "description": "A Basic Example of product and cart for ecommerce app in react",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build",
+    "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline --hot",
+    "build:prod": "webpack -p && cp src/index.html dist/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Krishank/react-redux-ecommerce-product-page-example.git"
+  },
+  "keywords": [
+    "reactjs"
+  ],
+  "author": "Krishank Dwivedi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Krishank/react-redux-ecommerce-product-page-example.git/issues"
+  },
+  "homepage": "https://github.com/Krishank/react-redux-ecommerce-product-page-example.git#readme",
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.11.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
