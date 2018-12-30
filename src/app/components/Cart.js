@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
+export class Cart extends React.Component {
 
-export const Cart = React.memo(function Cart(props) {
-
-  function filterData(products){
+  filterData(products){
     let filteredData = {};
     return products.filter((product, index)=>{
 
@@ -12,8 +11,8 @@ export const Cart = React.memo(function Cart(props) {
     })
   }
 
-  function genrateCart(products){
-    return filterData(products).map((product, index)=>{
+  genrateCart(products){
+    return this.filterData(products)>0 && this.filterData(products).map((product, index)=>{
       let total = 0;
       total= total+parseFloat(product.price, 10)
       return (
@@ -28,13 +27,14 @@ export const Cart = React.memo(function Cart(props) {
       )
     });
   }
+    render(){
+      return(
+            <React.Fragment>
 
-    return(
-          <React.Fragment>
+                {this.genrateCart(this.props.products)}
 
-              {genrateCart(props.products)}
+            </React.Fragment>
 
-          </React.Fragment>
-
-    )
-});
+      )
+    }
+}
